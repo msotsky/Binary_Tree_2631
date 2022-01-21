@@ -1,0 +1,48 @@
+class Node{
+	int data;
+	Node left, right;
+	public Node(int value){
+		data = value;
+		left = right = null;
+	}
+};
+
+
+
+public void inOrder(Node root){
+	if(root != null){
+		inOrder(root.left);
+		System.out.println(root.getData()); //root.key
+		inOrder(root.right);
+	}
+}
+
+public void preOrder(Node root){
+	if(root != null){
+		System.out.println(root.getData()); //root.key
+		preOrder(root.left);
+		preOrder(root.right):
+	}
+}
+
+public void postOrder(Node root){
+	if(root != null){
+		postOrder(root.left);
+		postOrder(root.right);
+		System.out.println(root.getData()): //root.key
+	}
+}
+
+public static void main(String[] args){
+	Node root = new Node(5);
+	root.left = new Node(10);
+	root.right = new Node(16);
+	root.left.left = new Node(6);
+	root.left.right = new Node(2);
+	root.right.left = new Node(3);
+	root.right.right = new Node(1);
+
+	inOrder(root);
+	preOrder(root);
+	postOrder(root);
+}
